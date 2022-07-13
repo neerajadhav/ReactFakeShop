@@ -18,14 +18,13 @@ function Products() {
                 setData(data);
                 setFilter(data);
                 setLoading(false);
-                console.log(filter);
             }
             return () => {
                 componentMounted = false;
             }
         }
         getProdcuts();
-    }, [filter]);
+    }, []);
 
     const Loading = () => {
         return (
