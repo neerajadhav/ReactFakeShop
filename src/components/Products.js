@@ -29,57 +29,45 @@ function Products() {
     const Loading = () => {
         return (
             <>
-                <div className="row">
-                    <div className="col-md-3 my-3">
-                        <div className="row position-sticky" style={{ top: "100px" }}>
-                            <div className="col-4 col-md-12"><Skeleton height={35} width={100} /></div>
-                            <div className="col-4 col-md-12"><Skeleton height={35} width={100} /></div>
-                            <div className="col-4 col-md-12"><Skeleton height={35} width={100} /></div>
-                            <div className="col-4 col-md-12"><Skeleton height={35} width={100} /></div>
-                            <div className="col-4 col-md-12"><Skeleton height={35} width={100} /></div>
-                        </div>
+                <div className="col-md-3 my-3">
+
+                    <div className="position-sticky" style={{ top: "100px" }}>
+                        <button className="btn btn-outline-dark m-1 btn-sm" onClick={() => setFilter(data)}>All</button>
+                        <button className="btn btn-outline-dark m-1 btn-sm" onClick={() => filterProduct("women's clothing")}>Women's Clothing</button>
+                        <button className="btn btn-outline-dark m-1 btn-sm" onClick={() => filterProduct("men's clothing")}>Men's Clothing</button>
+                        <button className="btn btn-outline-dark m-1 btn-sm" onClick={() => filterProduct("jewelery")}>Jewelery</button>
+                        <button className="btn btn-outline-dark m-1 btn-sm" onClick={() => filterProduct("electronics")}>Electronics</button>
                     </div>
-                    <div className="col-md-9 py-md-3">
-                        <div className="row">
-                            <div className="col-6 col-md-6 col-lg-4 p-3">
-                                <Skeleton height={250} />
-                            </div>
-                            <div className="col-6 col-md-6 col-lg-4 p-3">
-                                <Skeleton height={250} />
-                            </div>
-                            <div className="col-6 col-md-6 col-lg-4 p-3">
-                                <Skeleton height={250} />
-                            </div>
-                            <div className="col-6 col-md-6 col-lg-4 p-3">
-                                <Skeleton height={250} />
-                            </div>
-                            <div className="col-6 col-md-6 col-lg-4 p-3">
-                                <Skeleton height={250} />
-                            </div>
-                            <div className="col-6 col-md-6 col-lg-4 p-3">
-                                <Skeleton height={250} />
-                            </div>
-                            <div className="col-6 col-md-6 col-lg-4 p-3">
-                                <Skeleton height={250} />
-                            </div>
-                            <div className="col-6 col-md-6 col-lg-4 p-3">
-                                <Skeleton height={250} />
-                            </div>
-                            <div className="col-6 col-md-6 col-lg-4 p-3">
-                                <Skeleton height={250} />
-                            </div>
-                            <div className="col-6 col-md-6 col-lg-4 p-3">
-                                <Skeleton height={250} />
-                            </div>
-                            <div className="col-6 col-md-6 col-lg-4 p-3">
-                                <Skeleton height={250} />
-                            </div>
-                            <div className="col-6 col-md-6 col-lg-4 p-3">
-                                <Skeleton height={250} />
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
+
+                <div className="col-md-9 py-md-3">
+                    <div className="row">
+                        <div className="col-6 col-md-6 col-lg-4 mb-3">
+                            <Skeleton height={400} width={300}/>
+                        </div>
+                        <div className="col-6 col-md-6 col-lg-4 mb-3">
+                            <Skeleton height={400} width={300}/>
+                        </div>
+                        <div className="col-6 col-md-6 col-lg-4 mb-3">
+                            <Skeleton height={400} width={300}/>
+                        </div>
+                        <div className="col-6 col-md-6 col-lg-4 mb-3">
+                            <Skeleton height={400} width={300}/>
+                        </div>
+                        <div className="col-6 col-md-6 col-lg-4 mb-3">
+                            <Skeleton height={400} width={300}/>
+                        </div>
+                        <div className="col-6 col-md-6 col-lg-4 mb-3">
+                            <Skeleton height={400} width={300}/>
+                        </div>
+                        <div className="col-6 col-md-6 col-lg-4 mb-3">
+                            <Skeleton height={400} width={300}/>
+                        </div>  
+                    </div>
+
+                </div>
+
 
             </>
         )
@@ -109,9 +97,9 @@ function Products() {
                     <div className="row">
                         {filter.map((product) => {
                             return (
-                                <div className="col-6 col-md-6 col-lg-4 mb-3">
+                                <div className="col-6 col-md-6 col-lg-4 mb-3" key={product.id}>
 
-                                    <div className="card h-100" key={product.id}>
+                                    <div className="card h-100">
                                         <img src={product.image} className="m-3" style={{ height: "300px", width: "auto", objectFit: "contain" }} alt={product.title} />
                                         <div className="m-3 mb-0">
                                             <small className="card-title">{product.title.substring(0, 50)}...</small>
